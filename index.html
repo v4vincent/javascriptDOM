@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Test1</h1>
+
+<script>
+    let okPressed = window.confirm("Would you like to see a popup window?");
+
+    let okPressed = false;
+    if (okPressed){
+        let myWindow = window.open("","","width = 250, height=100");
+        myWindow.document.writeln("<h1>Hello, World!</h1>");
+    }
+
+</script>
+
+</body>
+</html>

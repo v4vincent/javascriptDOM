@@ -6,16 +6,29 @@
 </head>
 <body>
 
-<h1>Test1</h1>
+<h1>    Test1       </h1>
+<ul>
+    <li>    Vincent   </li>
+    <li>Nicole  </li>
+    <li>Baby        Vermillion</li>
+</ul>
+
+<ol>
+    <li>Oreo</li>
+    <li>Marvel</li>
+    <li>Nebby</li>
+</ol>
 
 <script>
-    let okPressed = window.confirm("Would you like to see a popup window?");
+    console.log(window.location);
+    console.log(window.navigator);
+    console.warn("warning warning!")
+    console.log(document.getElementsByTagName("ul")[0]);
+    console.dir(document.location);
+    document.writeln("<p>"+window.innerHeight+"</p>");
 
-    let okPressed = false;
-    if (okPressed){
-        let myWindow = window.open("","","width = 250, height=100");
-        myWindow.document.writeln("<h1>Hello, World!</h1>");
-    }
+
+
 
 </script>
 

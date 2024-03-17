@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="form-validation.js" defer></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .error-textbox {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <label for="cardNumber">Credit Card #:</label>
+    <input type="text" name="cardNumber"
+           id="cardNumber">
+    <span class="error hidden" id="errorMsg">Invalid Credit Card</span>
+    <label for="address">Address:</label>
+    <textarea name="address" id="address"></textarea>
+    <label for="acceptTerms">I accept the terms of
+        sale:</label>
+    <input type="checkbox" name="acceptTerms"
+           id="acceptTerms">
+    <input type="button" value="Submit"
+            id="submitBtn">
+</form>
+
+<form id="form2" style="margin-top: 200px">
+
+    <label for="cardNumber2">Credit Card #:</label>
+    <input type="text" name="cardNumber2"
+           id="cardNumber2">
+
+    <label for="acceptTerms2">I accept the terms of
+        sale:</label>
+    <input type="text" name="acceptTerms2"
+           id="acceptTerms2">
+
+    <label for="zip">Zip</label>
+    <input type="text" name="zip"
+           id="zip">
+
+    <input type="button" value="Submit2"
+           id="submitBtn2">
+
+</form>
+</body>
+</html>

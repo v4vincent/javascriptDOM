@@ -8,6 +8,9 @@ function getForecast() {
 }
 
 function responseReceivedHandler() {
+    if (this.status !== 200) {
+        alert("Error making HTTP request");
+    }
     let html = "";
     if (this.response.success) {
         html += "<h1>Forecast</h1>";
@@ -24,3 +27,20 @@ function responseReceivedHandler() {
 }
 
 document.getElementById("search").addEventListener("click", getForecast);
+
+
+function getForecast2(){
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://wp.zybooks.com/todos.php?day=Monday");
+    xhr.responseType = "json";
+    xhr.send();
+
+    // let html2 = "";;
+    let html2 = "<li>${day}</li>";
+
+
+
+
+}
+
+document.getElementById("search2").addEventListener("click", getForecast2)

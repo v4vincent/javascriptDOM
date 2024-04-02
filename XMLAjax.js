@@ -29,18 +29,41 @@ function responseReceivedHandler() {
 document.getElementById("search").addEventListener("click", getForecast);
 
 
+
+
+
+
+
 function getForecast2(){
+    let day = document.getElementById("day").value;
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://wp.zybooks.com/todos.php?day=Monday");
+    xhr.addEventListener("load", responseReceivedHandler2);
+    xhr.open("GET", "https://wp.zybooks.com/todos.php?day=" + day);
     xhr.responseType = "json";
     xhr.send();
+}
 
-    // let html2 = "";;
-    let html2 = "<li>${day}</li>";
-
+function responseReceivedHandler2(){
+    if (this.status !== 200) {
+        alert("Error making HTTP request");
+    }
+    let html = "";
+    if (this.response.success) {
+        html += "<h1>Forecast</h1>";
+        html += "<ol>";
+        for (let day of this.response.todos) {
+            html += `<li>${day}</li>`;
+        }
+        html += "</ol>";
+    }
+    else {
+        html = `<h1>Error: ${this.response.error}</h1>`;
+    }
+    document.getElementById("forecast").innerHTML = html;
 
 
 
 }
+
 
 document.getElementById("search2").addEventListener("click", getForecast2)
